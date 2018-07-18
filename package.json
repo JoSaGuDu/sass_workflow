@@ -1,0 +1,22 @@
+{
+  "name": "sass_workflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoSaGuDu/sass_workflow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoSaGuDu/sass_workflow/issues"
+  },
+  "homepage": "https://github.com/JoSaGuDu/sass_workflow#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
