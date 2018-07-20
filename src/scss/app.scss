@@ -3,3 +3,7 @@ $seccondaryColor: red;
 body{
   background-color: $mainColor;
 }
+
+h1:hover{
+  transform: rotate(30deg);
+}
