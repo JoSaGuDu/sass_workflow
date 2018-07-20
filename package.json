@@ -1,8 +1,8 @@
 {
   "name": "sass_workflow",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Sass practicig with gulp based workflow",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,13 +10,21 @@
     "type": "git",
     "url": "git+https://github.com/JoSaGuDu/sass_workflow.git"
   },
-  "author": "",
+  "keywords": [
+    "sass",
+    "gulp",
+    "workflow",
+    "javascript",
+    "git"
+  ],
+  "author": "JoSaGuDu",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JoSaGuDu/sass_workflow/issues"
   },
   "homepage": "https://github.com/JoSaGuDu/sass_workflow#readme",
   "devDependencies": {
-    "gulp": "^4.0.0"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
   }
 }
