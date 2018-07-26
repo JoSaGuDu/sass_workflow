@@ -5,6 +5,8 @@ const browserSync = require('browser-sync');
 const autoPrefixer = require('gulp-autoprefixer');
 const clean = require('gulp-clean');
 const concat = require('gulp-concat');
+const browserify = require('gulp-browserify');
+const merge = require('merge-stream');
 
 //Workflow variables
 const reload = browserSync.reload;
@@ -33,9 +35,12 @@ gulp.task('cleanScripts', function () {
 });
 
 gulp.task('sass', function () {
-  return gulp.src(SOURCEPATHS.sassSource)
+  let bootstrapCSS = gulp.src('./node_modules/bootsrap/dist/css/bootsrap.css');//fetch bootsrap css
+  let sassFiles = gulp.src(SOURCEPATHS.sassSource)
     .pipe(autoPrefixer())
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError));
+  return merge(bootstrapCSS, sassFiles)
+    .pipe(concat('app.css'))
     .pipe(gulp.dest(APPPATHS.css));
 });
 
@@ -55,6 +60,7 @@ gulp.task('html', ['cleanHtml'], function () {
 gulp.task('scripts', ['cleanScripts'], function () {
   return gulp.src(SOURCEPATHS.jsSource)
   .pipe(concat('main.js'))
+  .pipe(browserify())
   .pipe(gulp.dest(APPPATHS.js));
 });
 
