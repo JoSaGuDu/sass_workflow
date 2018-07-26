@@ -4,6 +4,7 @@ const sass = require('gulp-sass');
 const browserSync = require('browser-sync');
 const autoPrefixer = require('gulp-autoprefixer');
 const clean = require('gulp-clean');
+const concat = require('gulp-concat');
 
 //Workflow variables
 const reload = browserSync.reload;
@@ -53,6 +54,7 @@ gulp.task('html', ['cleanHtml'], function () {
 
 gulp.task('scripts', ['cleanScripts'], function () {
   return gulp.src(SOURCEPATHS.jsSource)
+  .pipe(concat('main.js'))
   .pipe(gulp.dest(APPPATHS.js));
 });
 
