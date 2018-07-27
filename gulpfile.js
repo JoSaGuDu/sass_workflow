@@ -35,7 +35,7 @@ gulp.task('cleanScripts', function () {
 });
 
 gulp.task('sass', function () {
-  let bootstrapCSS = gulp.src('./node_modules/bootsrap/dist/css/bootsrap.css');//fetch bootsrap css
+  let bootstrapCSS = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css');//fetch bootsrap css
   let sassFiles = gulp.src(SOURCEPATHS.sassSource)
     .pipe(autoPrefixer())
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError));
@@ -69,5 +69,11 @@ gulp.task('watch', ['serve', 'sass', 'cleanHtml', 'html', 'cleanScripts', 'scrip
   gulp.watch([SOURCEPATHS.htmlSource], ['html']);
   gulp.watch([SOURCEPATHS.jsSource], ['scripts']);
 });
+
+//generic task for move files from any dependency to the app files
+// gulp.task('taskName', function () {
+//   gulp.src('./node_modules/dependencyFolder/fileName.ext or *.ext or *.{ext1,ext2,ext3}')
+//   .pipe(gulp.dest(APPPATHS.destination defined in APPPATHS object ));
+// });
 
 gulp.task('default', ['watch']);

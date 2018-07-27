@@ -17477,12 +17477,13 @@ return Popper;
 },{}],5:[function(require,module,exports){
 (function (global){
 global.jQuery = require('jquery');
+popper = require('popper.js');
 bootstrap = require('bootstrap');
 mustache = require('mustache');
 
 jQuery(document).ready(function () {
-    alert('Ground control to jquery');
+    console.log('Ground control to jquery');
   });
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"bootstrap":1,"jquery":2,"mustache":3}]},{},[5])
+},{"bootstrap":1,"jquery":2,"mustache":3,"popper.js":4}]},{},[5])
